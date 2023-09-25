@@ -11,10 +11,8 @@ class Params:
     FONT_SIZE = 32
     WINDOW_SIZE = (FONT_SIZE*25,FONT_SIZE*6)
     REPLACE_TOKEN = {
-        "<name>": input("彼女の名前：")
+        "<name>": input("彼女の名前：") or "きみ"
     }
-    if REPLACE_TOKEN["<name>"] == "":
-        REPLACE_TOKEN["<name>"] = "きみ"
     DICT = load_vocabulary_from_file(get_data_path("data/vocab.txt"), REPLACE_TOKEN)
 
 class App:
