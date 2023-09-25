@@ -6,6 +6,12 @@ def get_data_path(dir):
     else:
         return dir
     
-def load_vocabulary_from_file(filepath, name):
+def load_vocabulary_from_file(filepath, replace_token):
+    result = []
     with open(filepath, 'r', encoding='utf-8') as file:
-        return [line.strip().replace("{name}", name).split("|") for line in file.readlines()]
+        for line in file.readlines():
+            line_text = line.strip()
+            for token, value in replace_token.items():
+                line_text = line_text.replace(token, value)
+            result.append(line_text.split("|"))
+        return result

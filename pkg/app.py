@@ -10,10 +10,12 @@ class Params:
     SOURCE = get_data_path("data/img.pyxres")
     FONT_SIZE = 32
     WINDOW_SIZE = (FONT_SIZE*25,FONT_SIZE*6)
-    NAME = input("彼女の名前：")
-    if NAME == "":
-        NAME = "きみ"
-    DICT = load_vocabulary_from_file(get_data_path("data/vocab.txt"), NAME)
+    REPLACE_TOKEN = {
+        "<name>": input("彼女の名前：")
+    }
+    if REPLACE_TOKEN["<name>"] == "":
+        REPLACE_TOKEN["<name>"] = "きみ"
+    DICT = load_vocabulary_from_file(get_data_path("data/vocab.txt"), REPLACE_TOKEN)
 
 class App:
     def __init__(self, params:Params) -> None:
