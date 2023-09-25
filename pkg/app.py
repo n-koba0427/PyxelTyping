@@ -7,9 +7,9 @@ import pykakasi
 import random
 
 class Params:
-    WINDOW_SIZE = (400,100)
     SOURCE = get_data_path("data/img.pyxres")
-    FONT_SIZE = 16
+    FONT_SIZE = 32
+    WINDOW_SIZE = (FONT_SIZE*25,FONT_SIZE*6)
     NAME = input("彼女の名前：")
     if NAME == "":
         NAME = "きみ"
@@ -33,7 +33,8 @@ class App:
     # initialize variables
     def _reset(self, params:Params):
         self.params = params
-        self.writer = puf.Writer("misaki_gothic2.ttf")
+        # self.writer = puf.Writer("misaki_gothic2.ttf")
+        self.writer = puf.Writer("IPA_Gothic.ttf")
         self.text = " "
         self.position = 0
         

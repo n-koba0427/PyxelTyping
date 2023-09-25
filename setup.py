@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pyxel-typing',
-    version='0.0.1',
+    version='0.0.2',
     packages=find_packages(),
     package_data={'PyxelTyping': ['pkg/*', "pkg/data/*"]},
     install_requires=[
